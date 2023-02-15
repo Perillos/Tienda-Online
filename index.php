@@ -2,5 +2,4 @@
 
 // include "/auth/seguridad.php";
 
-// header("Location: ./view/home.php");
-echo "hola";
+header("Location: ./view/home.php");
