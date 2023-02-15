@@ -1,8 +1,9 @@
 <?php
 
-include "/config/dbconnect.php";
-include "/view/templates/head.php";
-
+include "../config/dbconnect.php";
+include "../view/templates/head.php";
+include "../model/Db.php";
+/*
 if (
   empty($_POST['user']) ||
   empty($_POST['password'])
@@ -15,20 +16,22 @@ if (
 ";
   die();
 }
-
 $user = $_POST['user'];
 $password = $_POST['password'];
 
+*/
 
 $db = new Db();
 $conection = $db->conection;
-$sql = "SELECT * FROM users WHERE user = '$user'";
+// $sql = "SELECT * FROM users WHERE user = '$user'";
+$sql = "SELECT * FROM users";
 $query = $conection->prepare($sql);
 $query->execute();
 $fila = $query->fetchAll(PDO::FETCH_ASSOC);
 $passwordhash = $fila[2];
 $id = $fila[0];
-
+print_r($fila);
+die();
 
 
 if (password_verify($password, $passwordhash)) {

@@ -1,6 +1,7 @@
 <?php
 include "../auth/seguridad.php";
-include "../config/dbconnect.php";
+// include "../config/dbconnect.php";
+include "Db.php";
 
 // crear clase producto
 class Product

@@ -1,6 +1,6 @@
 <?php
 
-require_once 'config/dbconnect.php';
+require_once '../config/dbconnect.php';
 
 class Db
 {
