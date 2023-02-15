@@ -1,0 +1,3 @@
+
+DROP DATABASE IF EXISTS clientesdwes;
+CREATE DATABASE clientesdwes; /*!40100 DEFAULT CHARACTER SET utf8 */

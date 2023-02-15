@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav class="bg-white">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div
+            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+          >
+            <div class="flex flex-shrink-0 items-center">
+              <img
+                class="hidden h-16 w-auto lg:block"
+                src="/build/brand/converse.svg"
+                alt="converse"
+              />
+            </div>
+            <div class="hidden sm:ml-6 sm:block sm:flex sm:items-center">
+              <div class="flex space-x-4">
+                <!-- Current: 'bg-gray-900 text-white', Default: 'text-gray-300 hover:bg-gray-700 hover:text-white' -->
+                <a
+                  href="#"
+                  class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  aria-current="page"
+                  >Dashboard</a
+                >
+
+                <a
+                  href="#"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >Team</a
+                >
+
+                <a
+                  href="#"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >Projects</a
+                >
+
+                <a
+                  href="#"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >Calendar</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute inset-y-0 right-0 flex gap-1 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
+            <button
+              type="button"
+              class="flex-auto rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 h-8 w-20 rounded-full text-white"
+              id="user-menu-button"
+            >
+              Sing-In
+            </button>
+            <button
+              type="button"
+              class="flex-auto rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 h-8 w-20 rounded-full text-white"
+              id="user-menu-button"
+            >
+              Sing-Up
+            </button>
+            <button type="button" id="user-menu-button">
+              <img
+                class="items-center hidden h-8 w-auto lg:block ring-white text-white"
+                src="/build/brand/cart.svg"
+                alt="converse"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>
