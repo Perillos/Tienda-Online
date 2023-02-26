@@ -1,8 +1,8 @@
 <?php
 
-include "../config/dbconnect.php";
-include "../view/templates/head.php";
-include "../model/Db.php";
+require_once "../config/dbconnect.php";
+require_once "../view/templates/head.php";
+require_once "../model/Db.php";
 /*
 if (
   empty($_POST['user']) ||
@@ -31,7 +31,7 @@ $fila = $query->fetchAll(PDO::FETCH_ASSOC);
 $passwordhash = $fila[2];
 $id = $fila[0];
 print_r($fila);
-die();
+
 
 
 if (password_verify($password, $passwordhash)) {

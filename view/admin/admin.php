@@ -1,7 +1,7 @@
 <?php
 
-include "../auth/seguridad.php";
-include "./templates/head.php";
+require_once "../auth/seguridad.php";
+require_once "./templates/head.php";
 
 
 $type_user = $_SESSION['type_user'];
@@ -35,13 +35,13 @@ echo "
 
 
 
-include "../view/templates/footer.php";
+require_once "../view/templates/footer.php";
 ?>
 
 <?php
 
-include "../auth/seguridad.php";
-include "../auth/conexion.php";
+require_once "../auth/seguridad.php";
+require_once "../auth/conexion.php";
 
 $type_user = $_SESSION['type_user'];
 
@@ -72,9 +72,4 @@ if ($type_user == 'admin') {
         <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>
           <span class='navbar-toggler-icon'></span>
         </button>";
-
 }
-
-
-
-

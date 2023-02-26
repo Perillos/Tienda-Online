@@ -1,6 +1,6 @@
 <?php
 
-include "../config/dbconnect.php";
+require_once "../config/dbconnect.php";
 
 function navbar($user)
 {
@@ -35,11 +35,13 @@ function navbarInvited()
             class='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'
           >
             <div class='flex flex-shrink-0 items-center'>
-              <img
-                class='h-16 w-auto lg:block'
-                src='/build/brand/converse.svg'
-                alt='converse'
-              />
+              <a href='home.php'>
+                <img
+                  class='h-16 w-auto lg:block'
+                  src='/build/brand/converse.svg'
+                  alt='converse'
+                />
+              </a>
             </div>
           </div>
           <div

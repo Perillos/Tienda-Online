@@ -1,7 +1,7 @@
 <?php
-include "../auth/seguridad.php";
-include "./templates/head.php";
-include "../config/dbconnect.php";
+require_once "../auth/seguridad.php";
+require_once "./templates/head.php";
+require_once "../config/dbconnect.php";
 
 
 $value = $_GET['id'];
@@ -51,5 +51,4 @@ echo "<h1>Estas seguro que quires eliminar al cliente</h1>";
 
 
 
-include "../view/templates/footer.php";
-?>
+require_once "../view/templates/footer.php";

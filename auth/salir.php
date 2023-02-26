@@ -3,8 +3,9 @@
 session_start();
 $_SESSION = array();
 session_destroy();
+session_unset();
 
-include "../view/templates/head.php";
+require_once "../view/templates/head.php";
 ?>
 
 
@@ -12,4 +13,4 @@ include "../view/templates/head.php";
 <a href="/index.php" class="button">Login</a>
 
 <?php
-include "../view/templates/footer.php";
+require_once "../view/templates/footer.php";

@@ -1,5 +1,5 @@
 <?php
-include "templates/head.php";
+require_once "templates/head.php";
 ?>
 
 <body>
@@ -11,12 +11,12 @@ include "templates/head.php";
   <form action="../auth/conexion.php" method="post">
     <div>
       <label for="user">Usuario:</label>
-      <input name="user" type="text" id="user" placeholder="super" require>
+      <input name="user" type="text" id="user" placeholder="super" require_once>
     </div>
 
     <div>
       <label for="password">Clave:</label>
-      <input name="password" type="password" id="password" placeholder="mega" require>
+      <input name="password" type="password" id="password" placeholder="mega" require_once>
     </div>
 
     <div class="container">
@@ -35,5 +35,5 @@ include "templates/head.php";
 
 
 <?php
-include "../view/templates/footer.php";
+require_once "../view/templates/footer.php";
 ?>

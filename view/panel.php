@@ -1,7 +1,7 @@
 <?php
-include "../auth/seguridad.php";
-include "./templates/head.php";
-include "../config/dbconnect.php";
+require_once "../auth/seguridad.php";
+require_once "./templates/head.php";
+require_once "../config/dbconnect.php";
 
 $type_user = $_SESSION['type_user'];
 $user = $_SESSION['name_user'];
@@ -116,5 +116,4 @@ echo "
 ";
 
 
-include "../view/templates/footer.php";
-?>
+require_once "../view/templates/footer.php";

@@ -1,7 +1,7 @@
 <?php
-include "../auth/seguridad.php";
-include "../config/dbconnect.php";
-include "../view/templates/head.php";
+require_once "../auth/seguridad.php";
+require_once "../config/dbconnect.php";
+require_once "../view/templates/head.php";
 
 
 
@@ -128,5 +128,4 @@ if(!$insertar) {
 
 
 
-include "../view/templates/footer.php";
-?>
+require_once "../view/templates/footer.php";

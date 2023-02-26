@@ -1,6 +1,6 @@
 <?php
-include "../auth/seguridad.php";
-include "./templates/head.php";
+require_once "../auth/seguridad.php";
+require_once "./templates/head.php";
 
 ?>
 
@@ -9,25 +9,25 @@ include "./templates/head.php";
 <form name="formaddproduct" method="post" action="/controller/producto.controler.php" enctype="multipart/form-data">
 
   <div>
-      <label for="reference">Referencia del producto:</label>
-      <input name="reference" id="reference" type="text"  placeholder="uEl47896" required>
+    <label for="reference">Referencia del producto:</label>
+    <input name="reference" id="reference" type="text" placeholder="uEl47896" require_onced>
   </div>
 
   <div>
-      <label for="nameproduct">Nombre del producto:</label>
-      <input name="nameproduct" id="nameproduct" type="text"  placeholder="Camisa molona" required>
+    <label for="nameproduct">Nombre del producto:</label>
+    <input name="nameproduct" id="nameproduct" type="text" placeholder="Camisa molona" require_onced>
   </div>
 
 
 
   <div>
-      <label for="priceproduct">Precio del producto (€):</label>
-      <input name="priceproduct" id="priceproduct" type="number" placeholder="10.00" step="0.01" min="1" max="9999" required>
+    <label for="priceproduct">Precio del producto (€):</label>
+    <input name="priceproduct" id="priceproduct" type="number" placeholder="10.00" step="0.01" min="1" max="9999" require_onced>
   </div>
-  
+
   <div>
     <label for="typeproduct">Tipo de producto:</label>
-    <select name="typeproduct" id="typeproduct" required>
+    <select name="typeproduct" id="typeproduct" require_onced>
       <option value="Sombrero" selected>Sombrero</option>
       <option value="Camisa">Camisa</option>
       <option value="Pantalon">Pantalon</option>
@@ -37,12 +37,12 @@ include "./templates/head.php";
 
   <div>
     <label for="descriptionproduct">Descripción del producto:</label>
-    <textarea  name="descriptionproduct" id="descriptionproduct" placeholder="Añade una descripción obligatoriamente" required></textarea>
+    <textarea name="descriptionproduct" id="descriptionproduct" placeholder="Añade una descripción obligatoriamente" require_onced></textarea>
   </div>
 
   <div>
     <label for="imagenproduct">Imagen del producto:</label>
-    <input name="imagenproduct" id="imagenproduct" type="file" accept="image/*" required>
+    <input name="imagenproduct" id="imagenproduct" type="file" accept="image/*" require_onced>
   </div>
 
   <div class="container">
@@ -53,6 +53,6 @@ include "./templates/head.php";
 
 
 <?php
-include "./templates/footer.php";
+require_once "./templates/footer.php";
 
 ?>

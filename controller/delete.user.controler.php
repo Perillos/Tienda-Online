@@ -1,7 +1,7 @@
 <?php
-include "../auth/seguridad.php";
-include "../view/templates/head.php";
-include "../config/dbconnect.php";
+require_once "../auth/seguridad.php";
+require_once "../view/templates/head.php";
+require_once "../config/dbconnect.php";
 
 
 $value = $_GET['id'];
@@ -18,13 +18,13 @@ $sql = "DELETE FROM users WHERE id = '$value'";
 $resulDel = $link->prepare($sql);
 $resulDel->execute();
 
-if(!$resulDel) {
-    echo "<h2>Ha habido un error al borrar los datos. $my_error<h2>";
+if (!$resulDel) {
+  echo "<h2>Ha habido un error al borrar los datos. $my_error<h2>";
 } else {
-    echo "<h2>Los datos han sido borrados satisfactoriamente</h2>";
-    echo "<table border>";
+  echo "<h2>Los datos han sido borrados satisfactoriamente</h2>";
+  echo "<table border>";
 
-    echo "
+  echo "
             <tr>
                 <td>Nº Cliente:</td>
                 <td>DNI</td>
@@ -37,7 +37,7 @@ if(!$resulDel) {
 
             </tr>
         ";
-    echo "
+  echo "
         <tr>
             <td>$array1[0]</td>
             <td>$array1[5]</td>
@@ -49,7 +49,7 @@ if(!$resulDel) {
             <td>$array1[10]</td>
         </tr>
     ";
-    echo "</table border>";
+  echo "</table border>";
 }
 if ($type_user != 'admin') {
   session_destroy();
@@ -58,5 +58,5 @@ if ($type_user != 'admin') {
 ?>
 
 <div class='container'>
-    <a href='/index.php' class='button'>Volver al panel</a>
+  <a href='/index.php' class='button'>Volver al panel</a>
 </div>

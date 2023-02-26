@@ -1,7 +1,7 @@
 <?php
 
-include "../config/dbconnect.php";
-include "../view/templates/head.php";
+require_once "../config/dbconnect.php";
+require_once "../view/templates/head.php";
 
 
 if (
@@ -124,5 +124,4 @@ if(!$insertar) {
 
 
 
-include "../view/templates/footer.php";
-?>
+require_once "../view/templates/footer.php";
