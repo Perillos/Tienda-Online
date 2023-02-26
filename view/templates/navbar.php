@@ -61,13 +61,13 @@ function navbarInvited()
             >
               Sing-Up
             </button>
-            <button type='button' id='user-menu-button'>
+            <a href='./checkout.php'>
               <img
                 class='items-center h-8 w-auto lg:block ring-white text-white'
-                src='/build/brand/cart.svg'
+                src='../build/brand/cart.svg'
                 alt='converse'
               />
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -78,6 +78,11 @@ function navbarInvited()
   echo $html;
 }
 
+// <img
+//   class='items-center h-8 w-auto lg:block ring-white text-white'
+//   src='/build/brand/cart.svg'
+//   alt='converse'
+// />
 
 function navbarClient($user)
 {
