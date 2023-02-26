@@ -38,7 +38,7 @@ function navbarInvited()
               <a href='home.php'>
                 <img
                   class='h-16 w-auto lg:block'
-                  src='./build/brand/converse.svg'
+                  src='../build/brand/converse.svg'
                   alt='converse'
                 />
               </a>
