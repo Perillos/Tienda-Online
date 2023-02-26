@@ -44,7 +44,7 @@ function cart()
     <tr class='-my-6 divide-y divide-gray-200'>
       <td class='flex py-6'>
         <div class='h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200'>
-          <img src='{$model['image']}' alt='{$model['name']}' class='h-full w-full object-cover object-center'>
+          <img src=.'" . $model['image'] . " alt='" . $model['name'] . "' class='h-full w-full object-cover object-center'>
         </div>
       </td>
       <td>
