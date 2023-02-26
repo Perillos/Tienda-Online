@@ -387,10 +387,10 @@ $arrayCategoria = [
 
 $arrayModelos = [
   [
-    '1620_58', 1, 'Chuck', 'En 1970, las Chuck ya eran unas de las mejores sneakers de baloncesto de la historia. Las Chuck 70 rinden homenaje a este legado, para ello combinan detalles inspirados en los modelos clásicos y actualizaciones modernas para aportar comodidad.', '/build/img/1620_58.jpg'
+    '1620_58', 1, 'Chuck', 'En 1970, las Chuck ya eran unas de las mejores sneakers de baloncesto de la historia. Las Chuck 70 rinden homenaje a este legado, para ello combinan detalles inspirados en los modelos clásicos y actualizaciones modernas para aportar comodidad.', './build/img/1620_58.jpg'
   ],
   [
-    'A032_16', 2, 'Star', 'La amortiguación de la plantilla Ortholite y las costuras en la lengüeta con alas aportan una comodidad de nivel superior.', 'build/img/A032_16.jpg'
+    'A032_16', 2, 'Star', 'La amortiguación de la plantilla Ortholite y las costuras en la lengüeta con alas aportan una comodidad de nivel superior.', '/.build/img/A032_16.jpg'
   ],
   [
     'M90_01', 3, 'Classic', 'Uno de los favoritos de los patinadores desde los años 90.', './build/img/M90_01.jpg'
