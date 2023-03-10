@@ -18,7 +18,7 @@ function productOverview($modelid)
 
   <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
     <div class="aspect-w-3 aspect-h-4   rounded-lg lg:block">
-      <img src="<?= $model['image'] ?>" alt="<?= $model['name'] ?>" class="h-full w-full object-cover object-center">
+      <img src=".<?= $model['image'] ?>" alt="<?= $model['name'] ?>" class="h-full w-full object-cover object-center">
     </div>
     <div class="aspect-w-3 aspect-h-4 overflow-hidden rounded-lg lg:block">
       <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"><?= $model['name'] ?></h1>

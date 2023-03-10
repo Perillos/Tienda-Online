@@ -9,20 +9,30 @@ require_once "../model/Model.php";
 require_once "../model/Product.php";
 require_once "../model/Cart.php";
 
-
 // $type_user = isset($_SESSION['type_user']) ? $_SESSION['type_user'] : null;
 $user = isset($_SESSION['name_user']) ? $_SESSION['name_user'] : null;
 
+createHead();
+navbar($user);
 
-$product_id = $_REQUEST;
+if ((!isset($_SESSION['cart']) || empty($_SESSION['cart'])) && empty($_REQUEST)) {
+  echo "<h1 class='text-center'>Carrito vacio</h1>";
+  die();
+}
+
+
+
+
+
+
+
+$product_id = isset($_REQUEST) ? $_REQUEST : null;
 
 foreach ($_SESSION['cart'] as $key => $product) {
 
-  if ($product['product_id'] == $product_id['product_id']) {
+  if ($_SESSION['cart'][$key]['product_id'] == $product_id['product_id']) {
 
     $_SESSION['cart'][$key]['quantity'] += $product_id['quantity'];
-    createHead();
-    navbar($user);
     cart();
     die();
   }
@@ -30,7 +40,5 @@ foreach ($_SESSION['cart'] as $key => $product) {
 
 array_push($_SESSION['cart'], $product_id);
 
-// session_unset();
-createHead();
-navbar($user);
+
 cart();

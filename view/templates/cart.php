@@ -4,7 +4,7 @@
 
 function cart()
 {
-  if (!isset($_SESSION['cart']) && empty($_SESSION['cart'])) {
+  if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
     echo "<h1 class='text-center'>Carrito vacio</h1>";
     die();
   }
@@ -16,53 +16,56 @@ function cart()
   echo "
   <div class='container'>
     <div class='row'>
-      <div class='col-12'>
+      <div  class='w-full'>
         <h1 class='text-center'>Carrito de compras</h1>
       </div>
     </div>
-    <div class='row'>
+    <div  class='w-full'>
       <div class='col-12'>
         <table class='table'>
           <thead>
             <tr>
-              <th scope='col'>Imagen</th>
-              <th scope='col'>Producto</th>
-              <th scope='col'>Número</th>
-              <th scope='col'>Cantidad</th>
-              <th scope='col'>Precio</th>
+              <th scope='col' class='py-2 px-12'>Imagen</th>
+              <th scope='col' class='py-2 px-12'>Producto</th>
+              <th scope='col' class='py-2 px-12'>Número</th>
+              <th scope='col' class='py-2 px-12'>Cantidad</th>
+              <th scope='col' class='py-2 px-12'>Precio</th>
             </tr>
           </thead>
           <tbody>
   ";
   foreach ($products_id as  $product_id) {
-    // print_r($product_id);
+
     $product = Product::getProductById($product_id['product_id']);
     $model = Model::getModelById($product['model_id']);
     $total += $product['price'];
     $quantity = $product_id['quantity'];
     echo "
-    <tr class='-my-6 divide-y divide-gray-200'>
+    <tr class>
       <td class='flex py-6'>
         <div class='h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200'>
-          <img src=.'" . $model['image'] . " alt='" . $model['name'] . "' class='h-full w-full object-cover object-center'>
+          <img src='." . $model['image'] . "' alt='" . $model['name'] . "' class='h-full w-full object-cover object-center'>
         </div>
       </td>
       <td>
-        <div class='flex justify-between text-base font-medium text-gray-900'>
+        <div class='flex justify-center text-base font-medium text-gray-900'>
           <h3>{$model['name']}</h3>
         </div>
       </td>
       <td>
-        <div class='flex justify-between text-base font-medium text-gray-900'>
+        <div class='flex justify-center text-base font-medium text-gray-900'>
           <h3>{$product['size']}</h3>
         </div>
       </td>
       
       <td>
-        <div class='flex justify-between text-base font-medium text-gray-900'>
-          <input type='number' min='0' value='$quantity'</td>
+        <div class='flex justify-center'>
+          <input class='w-8 max-w-xs' type='number' min='0' value='$quantity'</td>
         </div>
-      <td>{$product['price']}</td>
+      <td>
+        <div class='flex justify-center'>
+          {$product['price']}</td>
+        </div>
     </tr>
     ";
   }
@@ -71,7 +74,7 @@ function cart()
   </table>
   ";
   echo "
-    <div class='flex justify-between text-base font-medium text-gray-900'>
+    <div class='flex justify-start gap-1 text-base font-medium text-gray-900'>
       <p>Total</p>
        <p>$total €</p>
     </div>

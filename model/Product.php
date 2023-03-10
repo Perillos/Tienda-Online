@@ -70,12 +70,13 @@ class Product
     $conection = $db->conection;
     $sql = "INSERT INTO products (ref_product, model_id, size, price, stock) VALUES (:ref_product, :model_id, :size, :price, :stock)";
     $query = $conection->prepare($sql);
-    $query->bindParam(':ref_product', $this->ref_product);
-    $query->bindParam(':model_id', $this->model_id);
-    $query->bindParam(':size', $this->size);
-    $query->bindParam(':stock', $this->stock);
-    $query->bindParam(':price', $this->price);
-    $query->execute();
+    $query->execute([
+      ':ref_product' => $this->ref_product,
+      ':model_id' => $this->model_id,
+      ':size' => $this->size,
+      ':stock' => $this->stock,
+      ':price' => $this->price
+    ]);
     return $query->rowCount();
   }
 

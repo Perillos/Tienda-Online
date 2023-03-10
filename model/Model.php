@@ -7,7 +7,6 @@ require_once "Db.php";
 class Model
 {
   // atributos
-  private $id;
   private $ref_model;
   private $category_id;
   private $name;
@@ -55,12 +54,15 @@ class Model
     $conection = $db->conection;
     $sql = "INSERT INTO models (ref_model, category_id, name, description, image) VALUES (:ref_model, :category_id, :name, :description, :image)";
     $query = $conection->prepare($sql);
-    $query->bindParam(':ref_model', $this->ref_model);
-    $query->bindParam(':category_id', $this->category_id);
-    $query->bindParam(':name', $this->name);
-    $query->bindParam(':description', $this->description);
-    $query->bindParam(':image', $this->image);
-    $query->execute();
+    $query->execute([
+      'ref_model', $this->ref_model,
+      'category_id', $this->category_id,
+      'name', $this->name,
+      'description', $this->description,
+      'image', $this->image
+    ]);
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    return $result;
   }
 
   // update model
@@ -70,12 +72,14 @@ class Model
     $conection = $db->conection;
     $sql = "UPDATE models SET ref_model = :ref_model, category_id = :category_id, name = :name, description = :description, image = :image WHERE id = $id";
     $query = $conection->prepare($sql);
-    $query->bindParam(':ref_model', $this->ref_model);
-    $query->bindParam(':category_id', $this->category_id);
-    $query->bindParam(':name', $this->name);
-    $query->bindParam(':description', $this->description);
-    $query->bindParam(':image', $this->image);
-    $query->execute();
+    $query->execute([
+      'ref_model', $this->ref_model,
+      'category_id', $this->category_id,
+      'name', $this->name,
+      'description', $this->description,
+      'image', $this->image
+    ]);
+    return $query->rowCount();
   }
 
   // delete model
@@ -86,6 +90,7 @@ class Model
     $sql = "DELETE FROM models WHERE id = $id";
     $query = $conection->prepare($sql);
     $query->execute();
+    return $query->rowCount();
   }
 }
 
