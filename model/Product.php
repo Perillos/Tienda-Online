@@ -17,8 +17,9 @@ class Product
 
 
   // constructor
-  public function __construct($ref_product, $model_id, $size, $stock, $price)
+  public function __construct($id, $ref_product, $model_id, $size, $stock, $price)
   {
+    $this->id = $id;
     $this->ref_product = $ref_product;
     $this->model_id = $model_id;
     $this->size = $size;
@@ -88,12 +89,15 @@ class Product
     $sql = "UPDATE products SET ref_product = :ref_product, model_id = :model_id, size = :size, stock = :stock, price = :price WHERE id = $id";
     $query = $conection->prepare($sql);
     $query->bindParam(':ref_product', $this->ref_product);
-    $query->bindParam(':model_id', $this->model_id);
-    $query->bindParam(':size', $this->size);
-    $query->bindParam(':stock', $this->stock);
-    $query->bindParam(':price', $this->price);
-    $query->execute();
-    return $query->rowCount();
+    $query->execute([
+      ':ref_product' => $this->ref_product,
+      ':model_id' => $this->model_id,
+      ':size' => $this->size,
+      ':stock' => $this->stock,
+      ':price' => $this->price
+    ]);
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    return $result;
   }
 
   // delete product
@@ -104,14 +108,7 @@ class Product
     $sql = "DELETE FROM products WHERE id = $id";
     $query = $conection->prepare($sql);
     $query->execute();
-    return $query->rowCount();
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    return $result;
   }
 }
-
-// $products = Product::getAllProducts();
-// $product1 = Product::getProductById(1);
-// $product2 = new Product('M90_01_42', 3, '42', 10, 100);
-
-// print_r($products);
-// print_r($product1);
-// print_r($product2->setProduct());

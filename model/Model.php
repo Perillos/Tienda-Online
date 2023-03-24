@@ -7,6 +7,7 @@ require_once "Db.php";
 class Model
 {
   // atributos
+  private $id;
   private $ref_model;
   private $category_id;
   private $name;
@@ -14,8 +15,9 @@ class Model
   private $image;
 
   // constructor
-  public function __construct($ref_model, $category_id, $name, $description, $image)
+  public function __construct($id, $ref_model, $category_id, $name, $description, $image)
   {
+    $this->id = $id;
     $this->ref_model = $ref_model;
     $this->category_id = $category_id;
     $this->name = $name;
@@ -79,7 +81,8 @@ class Model
       'description', $this->description,
       'image', $this->image
     ]);
-    return $query->rowCount();
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    return $result;
   }
 
   // delete model
@@ -90,16 +93,7 @@ class Model
     $sql = "DELETE FROM models WHERE id = $id";
     $query = $conection->prepare($sql);
     $query->execute();
-    return $query->rowCount();
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    return $result;
   }
 }
-
-
-
-// // $models = Model::getAllModels();
-// $model1 = Model::getModelById(1);
-// $model2 = new Model('M90_06', 2, 'Classic', 'Uno de los favoritos de los patinadores desde los años 90.', '/build/img/M90_06.jpg');
-
-// // print_r($models);
-// print_r($model1);
-// print_r($model2->setModel());
