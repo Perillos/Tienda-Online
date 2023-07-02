@@ -1,6 +1,6 @@
 <?php
 
-require_once 'config/dbconnect.php';
+// require_once 'config/dbconnect.php';
 
 
 class Db
@@ -15,10 +15,11 @@ class Db
   public function __construct()
   {
 
-    $this->host = constant('DB_HOST');
-    $this->db = constant('DB');
-    $this->user = constant('DB_USER');
-    $this->pass = constant('DB_PASS');
+    $env = parse_ini_file('.env');
+    $this->host = $env['DB_HOST'];
+    $this->db = $env['DB'];
+    $this->user = $env['DB_USER'];
+    $this->pass = $env['DB_PASSWORD'];
 
     try {
       $this->conection = new PDO('mysql:host=' . $this->host . '; dbname=' . $this->db, $this->user, $this->pass);

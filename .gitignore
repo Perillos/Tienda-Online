@@ -2,3 +2,5 @@
 /config
 .git
 .htaccess
+.env
+.idea
